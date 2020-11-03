@@ -17,10 +17,11 @@ jobs:
     #     python-version: [ '2.x', '3.x', 'pypy2', 'pypy3' ]
     name: Python pre-release test
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout code
+        uses: actions/checkout@v2
       - name: Setup python
-      - uses: actions/setup-python@v2
-      with:
-        python-version: '3.10.0-alpha - 3.10.0' # SemVer's version range syntax
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.0-alpha - 3.10.0' # SemVer's version range syntax
       - run: python -c "print('hi')""
       - run: python -v
