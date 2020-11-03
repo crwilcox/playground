@@ -3,12 +3,10 @@ name: Python-pre-releases
 # Run this workflow every time a new commit pushed to your repository
 # on: push
 
-schedule:
+on:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-    on:
-      schedule:
-        # * is a special character in YAML so you have to quote this string
-        - cron:  '*/5 * * * *'
+    - cron:  '*/5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
